@@ -1,4 +1,4 @@
-package com.example.melg.tracked.authentication;
+package com.example.melg.trackit.authentication;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.melg.tracked.MainActivity;
-import com.example.melg.tracked.R;
+import com.example.melg.trackit.MainActivity;
+import com.example.melg.trackit.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -123,6 +123,7 @@ public class SMSCodeVerificationActivity  extends AppCompatActivity{
         public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
             Log.d(TAG, "onVerificationCompleted: " + phoneAuthCredential.getSmsCode());
             Log.d(TAG, "onVerificationCompleted: COMPLEEEEETEDDDDDD");
+//            startActivity(new Intent(SMSCodeVerificationActivity.this, MainActivity.class));
 
         }
 

@@ -1,4 +1,4 @@
-package com.example.melg.tracked;
+package com.example.melg.trackit;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

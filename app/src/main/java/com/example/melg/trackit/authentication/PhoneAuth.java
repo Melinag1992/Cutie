@@ -1,4 +1,4 @@
-package com.example.melg.tracked.authentication;
+package com.example.melg.trackit.authentication;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.melg.tracked.R;
+import com.example.melg.trackit.R;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthProvider;
 import com.hbb20.CountryCodePicker;
@@ -28,6 +29,7 @@ public class PhoneAuth extends AppCompatActivity{
     private Button sendSMSButton;
     private String TAG = "phone verifying";
     private FirebaseAuth fbAuth;
+
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks
             verificationCallbacks;
     private String phoneVerificationId;

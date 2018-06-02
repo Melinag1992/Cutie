@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.melg.tracked.authentication.SMSCodeVerificationActivity">
+    tools:context="com.example.melg.trackit.authentication.SMSCodeVerificationActivity">
 
 
     <LinearLayout

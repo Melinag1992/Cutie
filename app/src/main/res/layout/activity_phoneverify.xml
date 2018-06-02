@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="com.example.melg.tracked.authentication.PhoneAuth">
+    tools:context="com.example.melg.trackit.authentication.PhoneAuth">
 
 
     <LinearLayout
