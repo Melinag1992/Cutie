@@ -34,10 +34,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick(View view){
 
-        Intent intent  = new Intent(MainActivity.this, TrackingInfo.class);
+        Intent intent  = new Intent(MainActivity.this, BluetoothConnectionService.class);
         intent.putExtra("tracking_number", trackingNumber_input.getText().toString());
         startActivity(intent);
-
-
     }
 }

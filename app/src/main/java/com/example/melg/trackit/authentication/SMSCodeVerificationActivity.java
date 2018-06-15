@@ -53,6 +53,8 @@ public class SMSCodeVerificationActivity  extends AppCompatActivity{
         }
 
         phoneNumber = getIntent().getExtras().getString("phonenumber");
+
+        Log.d(TAG, "onCreate: " + phoneNumber);
         mAuth = FirebaseAuth.getInstance();
 
         code = findViewById(R.id.code);
@@ -121,7 +123,7 @@ public class SMSCodeVerificationActivity  extends AppCompatActivity{
     PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
         @Override
         public void onVerificationCompleted(PhoneAuthCredential phoneAuthCredential) {
-            Log.d(TAG, "onVerificationCompleted: " + phoneAuthCredential.getSmsCode());
+            Log.d(TAG, "Code: "+  phoneAuthCredential.getSmsCode());
             Log.d(TAG, "onVerificationCompleted: COMPLEEEEETEDDDDDD");
 //            startActivity(new Intent(SMSCodeVerificationActivity.this, MainActivity.class));
 
@@ -137,8 +139,12 @@ public class SMSCodeVerificationActivity  extends AppCompatActivity{
         public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
             super.onCodeSent(s, forceResendingToken);
 
+
+            Log.d(TAG, "onCodeSent: " + s.toString() );
             codeSent = s;
             mResendToken = forceResendingToken;
+
+            Log.d(TAG, "onCodeSent: "+ mResendToken.toString());
 
         }
     };

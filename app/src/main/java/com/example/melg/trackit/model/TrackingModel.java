@@ -5,15 +5,14 @@ package com.example.melg.trackit.model;
  */
 
 public class TrackingModel {
+    private Meta meta;
+    private Data data;
 
-
-    private Tracking tracking;
-
-    public Tracking getTracking() {
-        return tracking;
+    public Meta getMeta() {
+        return meta;
     }
 
-    public void setTracking(Tracking tracking) {
-        this.tracking = tracking;
+    public Data getData() {
+        return data;
     }
 }

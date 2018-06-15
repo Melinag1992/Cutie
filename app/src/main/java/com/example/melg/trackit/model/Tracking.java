@@ -20,7 +20,7 @@ public class Tracking {
     private List<String> emails;
     private String destination_country_iso3;
     private int delivery_time;
-
+    private Custom_fields custom_fields;
     private boolean active;
     private String slug;
     private String tracking_number;
@@ -162,6 +162,14 @@ public class Tracking {
 
     public void setDelivery_time(int delivery_time) {
         this.delivery_time = delivery_time;
+    }
+
+    public Custom_fields getCustom_fields() {
+        return custom_fields;
+    }
+
+    public void setCustom_fields(Custom_fields custom_fields) {
+        this.custom_fields = custom_fields;
     }
 
     public boolean getActive() {

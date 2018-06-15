@@ -4,6 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -13,16 +16,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.example.melg.trackit.authentication.PhoneAuth">
+        <activity android:name="com.example.melg.trackit.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.melg.trackit.MainActivity"/>
+        <activity android:name="com.example.melg.trackit.authentication.PhoneAuth"/>
         <activity android:name="com.example.melg.trackit.authentication.SMSCodeVerificationActivity"/>
-        <activity android:name="com.example.melg.trackit.TrackingInfo"/>
     </application>
 
 </manifest>

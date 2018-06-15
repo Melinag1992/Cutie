@@ -11,7 +11,7 @@
 
     <EditText
         android:id="@+id/tracking_number"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="60dp"
         android:textColor="@android:color/darker_gray"
        />
@@ -35,6 +35,7 @@
             android:layout_gravity="right|bottom"
             android:background="@android:color/transparent"
             android:text="Track it! "
+            android:onClick="onClick"
             tools:layout_editor_absoluteX="252dp"
             tools:layout_editor_absoluteY="426dp" />
 
