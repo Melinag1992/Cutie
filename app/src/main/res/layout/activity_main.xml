@@ -1,47 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center|center_horizontal"
     android:padding="16dp"
     tools:context="com.example.melg.trackit.MainActivity">
 
-    <EditText
-        android:id="@+id/tracking_number"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:textColor="@android:color/darker_gray"
-       />
-
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:text="Enter your tracking Number"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="227dp" />
+        android:gravity="center"
+        android:text="Cuties"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="28sp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-
-        <Button
-            android:id="@+id/trackit_btn"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_gravity="right|bottom"
-            android:background="@android:color/transparent"
-            android:text="Track it! "
-            android:onClick="onClick"
-            tools:layout_editor_absoluteX="252dp"
-            tools:layout_editor_absoluteY="426dp" />
+            android:layout_gravity="center"
+            android:text="Turn on Cutie Beacon    "
+            android:textSize="16sp" />
+
+        <ToggleButton
+            android:id="@+id/btnONOFF"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:layout_marginLeft="70dp"
+            android:onClick="btnDiscover"
+            android:textOff="Off"
+            android:textOn="ON" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Allow others to find you "
+            android:textSize="16sp" />
+
+        <ToggleButton
+            android:id="@+id/btnDiscoverable_on_off"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:layout_marginLeft="70dp"
+            android:onClick="btnEnableDisable_Discoverable"
+            android:textOff="Off"
+            android:textOn="ON" />
+    </LinearLayout>
 
 
+    <Button
+        android:id="@+id/btnFindUnpairedDevices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="btnDiscover"
+        android:text="Search for Cuties" />
 
+    <ListView
+        android:id="@+id/lvNewDevices"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/btnStartConnection"
+        android:layout_marginTop="15dp" />
 
+    <Button
+        android:id="@+id/btnStartConnection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_below="@+id/btnFindUnpairedDevices"
+        android:layout_marginTop="10dp"
+        android:text="Start Connection" />
 
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/lvNewDevices"
+        android:hint="Enter Text Here" />
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lvNewDevices"
+        android:layout_toRightOf="@+id/editText"
+        android:text="SEND" />
 
 </LinearLayout>
