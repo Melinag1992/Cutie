@@ -21,7 +21,7 @@ import java.util.UUID;
 
 public class BluetoothConnectionService {
     private static final String TAG = "BluetoothConnectionService";
-    private static final String appName = "Linked";
+    private static final String appName = "Cuties";
     private ConnectThread connectThread;
 
     private ConnectedThread connectedThread;

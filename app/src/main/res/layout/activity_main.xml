@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -8,98 +8,132 @@
     android:padding="16dp"
     tools:context="com.example.melg.trackit.MainActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Cuties"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="28sp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Turn on Cutie Beacon    "
-            android:textSize="16sp" />
-
-        <ToggleButton
-            android:id="@+id/btnONOFF"
+        android:orientation="vertical">
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="right"
-            android:layout_marginLeft="70dp"
+            android:layout_height="100dp"
+            android:gravity="center"
+            android:text="Cuties"
+            android:src="@drawable/cuties"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="28sp"
+            android:padding="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@android:color/black"
+                android:text="Turn on Cutie Beacon     "
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btnONOFF"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="right"
+                android:layout_marginLeft="70dp"
+                android:background="@drawable/rounded_shape"
+                android:onClick="btnDiscover"
+                android:text="ON / OFF"
+             />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@android:color/black"
+                android:text="Allow others to find you "
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btnDiscoverable_on_off"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="right"
+                android:layout_marginLeft="70dp"
+                android:background="@drawable/rounded_shape"
+                android:onClick="btnEnableDisable_Discoverable"
+                android:text="ON / OFF" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnFindUnpairedDevices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:onClick="btnDiscover"
-            android:textOff="Off"
-            android:textOn="ON" />
-    </LinearLayout>
+            android:background="@drawable/rounded_shape"
+            android:text="Search for Cuties" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        <ListView
+            android:id="@+id/lvNewDevices"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_below="@+id/btnStartConnection"
+            android:layout_marginTop="15dp" />
+
+        <Button
+            android:id="@+id/btnStartConnection"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_below="@+id/btnFindUnpairedDevices"
+            android:layout_gravity="right"
+            android:padding="10dp"
+            android:background="@drawable/rounded_shape"
+            android:layout_marginTop="10dp"
+            android:text="Start Connection"
+            android:visibility="gone"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Allow others to find you "
-            android:textSize="16sp" />
+            android:padding="10dp"
+            android:textColor="@android:color/black"
+            android:text="Send the cutie a message " />
 
-        <ToggleButton
-            android:id="@+id/btnDiscoverable_on_off"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_gravity="right"
-            android:layout_marginLeft="70dp"
-            android:onClick="btnEnableDisable_Discoverable"
-            android:textOff="Off"
-            android:textOn="ON" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/lvNewDevices"
+                android:background="@android:color/transparent"
+                android:hint="Enter Text Here" />
+
+            <Button
+                android:id="@+id/btnSend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lvNewDevices"
+                android:layout_gravity="right"
+                android:layout_toRightOf="@+id/editText"
+                android:background="@android:color/transparent"
+                android:text="SEND" />
+
+        </LinearLayout>
     </LinearLayout>
 
-
-    <Button
-        android:id="@+id/btnFindUnpairedDevices"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="btnDiscover"
-        android:text="Search for Cuties" />
-
-    <ListView
-        android:id="@+id/lvNewDevices"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_below="@+id/btnStartConnection"
-        android:layout_marginTop="15dp" />
-
-    <Button
-        android:id="@+id/btnStartConnection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:layout_below="@+id/btnFindUnpairedDevices"
-        android:layout_marginTop="10dp"
-        android:text="Start Connection" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/lvNewDevices"
-        android:hint="Enter Text Here" />
-
-    <Button
-        android:id="@+id/btnSend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lvNewDevices"
-        android:layout_toRightOf="@+id/editText"
-        android:text="SEND" />
-
-</LinearLayout>
+</ScrollView>

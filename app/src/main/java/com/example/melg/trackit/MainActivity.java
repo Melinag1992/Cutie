@@ -91,6 +91,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     //Device is in Discoverable Mode
                     case BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE:
                         Log.d(TAG, "mBroadcastReceiver2: Discoverability Enabled.");
+
+
+                           btnStartConnection.setVisibility(View.VISIBLE);
+
+
                         break;
                     //Device not in discoverable mode
                     case BluetoothAdapter.SCAN_MODE_CONNECTABLE:
@@ -325,7 +330,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //first cancel discovery because its very memory intensive.
         mBluetoothAdapter.cancelDiscovery();
 
-        Log.d(TAG, "onItemClick: You Clicked on a device.");
+            Log.d(TAG, "onItemClick: You Clicked on a device.");
+
         String deviceName = mBTDevices.get(i).getName();
         String deviceAddress = mBTDevices.get(i).getAddress();
 
