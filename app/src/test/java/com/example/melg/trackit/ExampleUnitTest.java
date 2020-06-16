@@ -1,4 +1,4 @@
-package com.example.melg.tracked;
+package com.example.melg.trackit;
 
 import org.junit.Test;
 
